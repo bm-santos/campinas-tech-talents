@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fetch Gatos</title>
+</head>
+<body>
+    <button onclick="mudarImagem()">Foto do Gato</button> <br>
+    <img src="" id="foto">
+
+    <script>
+
+        function mudarImagem(){
+            let foto = document.querySelector("#foto")
+
+            fetch("https://aws.random.cat/meow")
+                .then(function (resposta){
+                    resposta.json()
+                    .then(function(dados){
+                        console.log(dados)
+                        foto.src = dados.file
+                    })
+                })
+                .cath(function(error){
+                    console.log(erro)
+                })
+        }
+
+    </script>
+</body>
+</html>

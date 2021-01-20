@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>Aula 2 - Objetos</title>
+</head>
+<body>
+    <p id="status"></p>
+    <button onclick="verificarPessoa()">verificar</button>
+    <script>
+        function verificarPessoa(){
+            let pessoa = {
+            nome: "Bruno",
+            idade: 28,
+            status_civil: false
+            }
+
+            let texto_status = document.querySelector("#status");
+
+            if  (pessoa.status_civil) {
+                texto_status = texto_status.innerText="Casado" 
+            } else {
+                texto_status = texto_status.innerText="Solteiro"
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,12 +1,9 @@
-import { TipoPerfilDados } from "../../types"
+import { TipoPerfilDados } from "../../types/TipoPerfil"
 
 function Profile(props: TipoPerfilDados) {
 
-    const nome = props.dados.nome
-    const ocupacao = props.dados.ocupacao
-    const resumo = props.dados.resumo
-    const perfilProfissional = props.dados.perfilProfissional
-    
+    const { nome, ocupacao, resumo, perfilProfissional } = props.dados
+
     return (
         <>
             <div className="perfil">

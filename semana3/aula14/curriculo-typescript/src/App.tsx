@@ -2,19 +2,21 @@ import React, { useState } from 'react';
 import './App.css';
 import Profile from './components/Perfil';
 import ExperienceList from './components/ExperienceList';
-import { TipoAPI, TipoExperiencia, TipoExperienciaDados } from './types';
+import { TipoAPI } from './types/TipoAPI';
+import EducationList from './components/EducationList';
+import ContactList from './components/ContactList';
 
 function App() {
 
   const fakeAPI: TipoAPI = {
-    perfil: 
-      {
-        nome: 'Bruno Santos',
-        ocupacao: 'Developer',
-        resumo: 'Hortolândia- SP, 27 anos, Brasileiro',
-        perfilProfissional: 'Recém-formado em Engenharia de Telecomunicações, sou apaixonado por aprender novas tecnologias, aplicar inovação, otimizar processos e fazer parte de um propósito maior. Nos últimos anos tenho trabalhado com atendimento ao cliente e estratégia de negócios. Também sou um desenvolvedor entusiasta de front-end e SQL.',
-      }
-    
+    perfil:
+    {
+      nome: 'Bruno Santos',
+      ocupacao: 'Developer',
+      resumo: 'Hortolândia- SP, 27 anos, Brasileiro',
+      perfilProfissional: 'Recém-formado em Engenharia de Telecomunicações, sou apaixonado por aprender novas tecnologias, aplicar inovação, otimizar processos e fazer parte de um propósito maior. Nos últimos anos tenho trabalhado com atendimento ao cliente e estratégia de negócios. Também sou um desenvolvedor entusiasta de front-end e SQL.',
+    }
+
     ,
     contatos: [
       {
@@ -112,11 +114,13 @@ function App() {
 
   const [resposta] = useState(fakeAPI)
 
-  console.log(resposta.experiencia)
   return (
     <main>
       <Profile dados={resposta.perfil} />
-      <aside></aside>
+      <aside>
+        <ContactList contatos={resposta.contatos} />
+        <EducationList educacao={resposta.educacao} />
+      </aside>
       <ExperienceList experiencia={resposta.experiencia} />
     </main>
   );

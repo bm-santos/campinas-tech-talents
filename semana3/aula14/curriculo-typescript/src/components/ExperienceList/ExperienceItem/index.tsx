@@ -1,8 +1,9 @@
-function ExperienceItem(props: any) {
-    const {cargo, periodo, empresa, local, conteudo} = props
+import { TipoExperienciaProps } from "../../../types/TipoExperiencia"
+
+function ExperienceItem(props: TipoExperienciaProps) {
+    const { cargo, periodo, empresa, local, conteudo } = props.dados
     return (
         <div className="experience-item">
-
             <div>
                 <h4>{cargo}</h4>
                 <span>{periodo}</span>
